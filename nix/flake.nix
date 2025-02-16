@@ -21,18 +21,15 @@
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.google-chrome
-	  pkgs.kitty
-          pkgs.mkalias
-          pkgs.neovim
-          pkgs.slack
-          (pkgs.vscode-with-extensions.override {
-            vscodeExtensions = with pkgs.vscode-extensions; [
-              bbenoist.nix
-            ];
-          })
-        ];
+      environment.systemPackages = [
+	pkgs.mkalias
+        pkgs.neovim
+        (pkgs.vscode-with-extensions.override {
+          vscodeExtensions = with pkgs.vscode-extensions; [
+            bbenoist.nix
+          ];
+        })
+      ];
 
       users.users.${username} = {
         name = username;
@@ -46,6 +43,9 @@
 	];
         enable = true;
 	casks = [
+	  "google-chrome"
+	  "kitty"
+	  "slack"
 	];
 	onActivation.cleanup = "zap";
       };
