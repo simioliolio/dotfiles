@@ -15,10 +15,14 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.google-chrome
-	  pkgs.mkalias
-	  pkgs.neovim
-	  pkgs.slack
-	  pkgs.vscode
+          pkgs.mkalias
+          pkgs.neovim
+          pkgs.slack
+          (pkgs.vscode-with-extensions.override {
+            vscodeExtensions = with pkgs.vscode-extensions; [
+              bbenoist.nix
+            ];
+          })
         ];
 
       # Homebrew casks
@@ -52,7 +56,8 @@
       nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
         "google-chrome"
 	"slack"
-        "vscode"
+	"vscode"
+	"vscode-with-extensions"
       ];
 
       # Ensure GUI apps are searchable in spotlight
