@@ -52,6 +52,7 @@
 	      programs.home-manager.enable = true;
               imports = [
 	        ./modules/kitty
+		./modules/neovim
 		./modules/zsh
 	      ];
 	    };

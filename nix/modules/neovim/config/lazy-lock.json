@@ -1,0 +1,6 @@
+{
+  "catppuccin": { "branch": "main", "commit": "07de2d6f1c250c2df66a359ecf6d145a9e904a1a" },
+  "fzf-lua": { "branch": "main", "commit": "471e33e9afa31c3b9ee22023913959eef8980b8f" },
+  "lazy.nvim": { "branch": "main", "commit": "e5e9bf48211a13d9ee6c1077c88327c49c1ab4a0" },
+  "nvim-web-devicons": { "branch": "master", "commit": "1020869742ecb191f260818234517f4a1515cfe8" }
+}
