@@ -7,10 +7,11 @@
     pkgs.mkalias
       pkgs.neovim
       (pkgs.vscode-with-extensions.override {
-       vscodeExtensions = with pkgs.vscode-extensions; [
-       bbenoist.nix
-       ];
-       })
+         vscodeExtensions = with pkgs.vscode-extensions; [
+           bbenoist.nix
+           eamodio.gitlens
+         ];
+      })
   ];
 
   users.users.${username} = {
