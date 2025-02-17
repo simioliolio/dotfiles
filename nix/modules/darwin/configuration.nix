@@ -32,6 +32,7 @@
     casks = [
       "docker"
       "google-chrome"
+      "google-cloud-sdk"
       "kitty"
       "slack"
     ];
@@ -51,9 +52,9 @@
 # Set unfree exceptions
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "google-chrome"
-      "slack"
-      "vscode"
-      "vscode-with-extensions"
+    "slack"
+    "vscode"
+    "vscode-with-extensions"
   ];
 
 # Ensure GUI apps are searchable in spotlight
