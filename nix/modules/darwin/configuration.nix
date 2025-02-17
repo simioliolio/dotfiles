@@ -1,4 +1,5 @@
-{ pkgs, lib, config, username, ... }: {
+{ pkgs, lib, config, username, ... }:
+{
 
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget
@@ -75,6 +76,5 @@
         ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
         '';
-
-                                      }
+}
 
