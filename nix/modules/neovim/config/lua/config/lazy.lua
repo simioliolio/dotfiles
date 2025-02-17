@@ -30,6 +30,9 @@ vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
 -- Setup clipboard
 vim.o.clipboard = "unnamed" -- OSX
 
+-- Line numbers
+vim.o.number = true
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
