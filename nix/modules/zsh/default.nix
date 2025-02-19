@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -9,6 +9,11 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    initExtra = ''
+      export PATH="$PATH:${config.home.homeDirectory}/.local/bin"
+      export EDITOR="nvim"
+    '';
 
     shellAliases = {
       ll = "ls -la";
