@@ -52,9 +52,10 @@
             programs.home-manager.enable = true;
             imports = [
               ./modules/fzf
-                ./modules/kitty
-                ./modules/neovim
-                ./modules/zsh
+              ./modules/git
+              ./modules/kitty
+              ./modules/neovim
+              ./modules/zsh
             ];
           };
         };
