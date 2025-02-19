@@ -8,8 +8,12 @@
       pkgs.neovim
       (pkgs.vscode-with-extensions.override {
          vscodeExtensions = with pkgs.vscode-extensions; [
+           bazelbuild.vscode-bazel
            bbenoist.nix
            eamodio.gitlens
+           github.copilot
+           github.copilot-chat
+           ms-python.python
          ];
       })
   ];
@@ -49,13 +53,8 @@
 # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-# Set unfree exceptions
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "google-chrome"
-    "slack"
-    "vscode"
-    "vscode-with-extensions"
-  ];
+# Allow unfree apps (ie, vscode, etc)
+  nixpkgs.config.allowUnfree = true;
 
 # Ensure GUI apps are searchable in spotlight
 # https://gist.github.com/elliottminns/211ef645ebd484eb9a5228570bb60ec3
