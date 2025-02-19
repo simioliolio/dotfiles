@@ -1,12 +1,15 @@
 { ... }:
 {
-  programs.git.extraConfig = {
-    core = {
-      editor = "vim";
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      core = {
+        editor = "vim";
+      };
+      push = {
+        autoSetupRemote = true;
+      };
     };
-    push = {
-      autoSetupRemote = true;
-    };
-  }
+  };
 }
 
