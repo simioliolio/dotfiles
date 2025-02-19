@@ -27,6 +27,7 @@
   homebrew = {
     brews = [
       "bazelisk"
+      "gh"
       "git"
       "git-lfs"
       "ripgrep"
@@ -37,6 +38,7 @@
       "docker"
       "google-chrome"
       "google-cloud-sdk"
+      "grid"
       "kitty"
       "slack"
     ];
