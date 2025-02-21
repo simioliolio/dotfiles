@@ -30,6 +30,8 @@
       "gh"
       "git"
       "git-lfs"
+      "mas"
+      "pyenv"
       "ripgrep"
       "tree"
     ];
@@ -42,6 +44,9 @@
       "kitty"
       "slack"
     ];
+    masApps = {
+      "Be Focused Pro - Pomodoro Timer" = 961632517;
+    };
     onActivation.cleanup = "zap";
   };
 
