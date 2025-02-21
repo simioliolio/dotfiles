@@ -79,5 +79,15 @@
         ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
         '';
+
+# Prefs
+  system.defaults = {
+    NSGlobalDomain = {
+      KeyRepeat = 6;
+      InitialKeyRepeat = 25;
+    };
+    universalaccess.closeViewScrollWheelToggle = true;
+  };
+
 }
 
