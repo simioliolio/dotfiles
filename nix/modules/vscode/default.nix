@@ -1,7 +1,7 @@
 { config, ... }:
 {
   programs.vscode.userSettings = {
-    "files.autoSave": "afterDelay";
-  }
+    "files.autoSave" = "afterDelay";
+  };
 }
 
