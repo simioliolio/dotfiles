@@ -3,6 +3,7 @@
   "fzf-lua": { "branch": "main", "commit": "3d3e4bda8cc60f00bcce7046a78581ee1f6362a4" },
   "lazy.nvim": { "branch": "main", "commit": "e5e9bf48211a13d9ee6c1077c88327c49c1ab4a0" },
   "mason.nvim": { "branch": "main", "commit": "fc98833b6da5de5a9c5b1446ac541577059555be" },
+  "nvim-lint": { "branch": "master", "commit": "6e9dd545a1af204c4022a8fcd99727ea41ffdcc8" },
   "nvim-web-devicons": { "branch": "master", "commit": "1020869742ecb191f260818234517f4a1515cfe8" },
   "spaceless": { "branch": "main", "commit": "927fb0afb416ea39306af5842c247d810dfd5938" }
 }
