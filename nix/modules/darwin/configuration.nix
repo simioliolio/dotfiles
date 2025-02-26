@@ -88,11 +88,11 @@
 # Prefs
   system.defaults = {
     NSGlobalDomain = {
-      KeyRepeat = 6;
-      InitialKeyRepeat = 25;
+      KeyRepeat = 2;
+      InitialKeyRepeat = 10;
     };
     universalaccess.closeViewScrollWheelToggle = true;
+    universalaccess.reduceMotion = true;
   };
-
 }
 
