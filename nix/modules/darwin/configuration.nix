@@ -31,6 +31,7 @@
       "git"
       "git-lfs"
       "mas"
+      "nvm"
       "pyenv"
       "ripgrep"
       "tree"
