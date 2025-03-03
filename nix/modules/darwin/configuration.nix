@@ -91,8 +91,10 @@
       KeyRepeat = 2;
       InitialKeyRepeat = 10;
     };
+    trackpad.TrackpadThreeFingerDrag = true;
     universalaccess.closeViewScrollWheelToggle = true;
     universalaccess.reduceMotion = true;
+
   };
 }
 
