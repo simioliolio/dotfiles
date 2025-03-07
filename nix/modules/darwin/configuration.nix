@@ -56,7 +56,18 @@
 
 # Used for backwards compatibility, please read the changelog before changing.
 # $ darwin-rebuild changelog
-  system.stateVersion = 6;
+system = {
+  stateVersion = 6;
+  defaults = {
+    NSGlobalDomain = {
+      KeyRepeat = 2;
+      InitialKeyRepeat = 10;
+    };
+    trackpad.TrackpadThreeFingerDrag = true;
+    universalaccess.closeViewScrollWheelToggle = true;
+    universalaccess.reduceMotion = true;
+  };
+};
 
 # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -67,21 +78,5 @@
 # TODO: Ensure GUI apps are searchable in spotlight
 # https://gist.github.com/elliottminns/211ef645ebd484eb9a5228570bb60ec3
 
-  system.activationScripts.applications.text = let
-  in
-  pkgs.lib.mkForce ''
-  '';
-
-# Prefs
-  system.defaults = {
-    NSGlobalDomain = {
-      KeyRepeat = 2;
-      InitialKeyRepeat = 10;
-    };
-    trackpad.TrackpadThreeFingerDrag = true;
-    universalaccess.closeViewScrollWheelToggle = true;
-    universalaccess.reduceMotion = true;
-
-  };
 }
 
