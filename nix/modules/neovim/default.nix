@@ -5,7 +5,6 @@
     defaultEditor = true;
     extraPackages = with pkgs; [
       ruff
-      ruff-lsp
       stylua
     ];
   };
