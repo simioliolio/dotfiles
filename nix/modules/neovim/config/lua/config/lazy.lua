@@ -42,7 +42,7 @@ require("lazy").setup({
  
   -- colorscheme that will be used when installing plugins.
   install = { 
-    colorscheme = { "catppuccin" } 
+    colorscheme = { "kanagawa" }
   },
 
   -- automatically check for plugin updates
@@ -50,5 +50,5 @@ require("lazy").setup({
 })
 
 -- Setup catppuccin
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "kanagawa"
 
