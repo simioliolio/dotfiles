@@ -34,6 +34,7 @@
       "mvn"
       "nvm"
       "pyenv"
+      "python-lsp-server"
       "ripgrep"
       "tree"
     ];
