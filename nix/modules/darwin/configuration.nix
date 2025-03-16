@@ -66,6 +66,7 @@ system = {
       InitialKeyRepeat = 10;
     };
     trackpad.TrackpadThreeFingerDrag = true;
+    trackpad.Clicking = true;
     universalaccess.closeViewScrollWheelToggle = true;
     universalaccess.reduceMotion = true;
   };
