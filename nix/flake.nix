@@ -30,37 +30,37 @@
       specialArgs = args;
       modules = with args; [
         ./modules/darwin
-#           nix-homebrew.darwinModules.nix-homebrew
-#           {
-#             nix-homebrew = {
-#               enable = true;
-# # Apple Silicon Only
-#               enableRosetta = true;
-# # User owning the Homebrew prefix
-#               user = username;
-#             };
-#           }
-      home-manager.darwinModules.home-manager
-      {
+         nix-homebrew.darwinModules.nix-homebrew
+         {
+           nix-homebrew = {
+             enable = true;
+             # Apple Silicon Only
+             enableRosetta = true;
+             # User owning the Homebrew prefix
+             user = username;
+           };
+         }
+        home-manager.darwinModules.home-manager
+        {
 
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.${username} = { pkgs, ...}: {
-            home.username = username;
-            home.stateVersion = "24.05";
-            programs.home-manager.enable = true;
-            imports = [
-              ./modules/fzf
-              ./modules/git
-              ./modules/kitty
-              ./modules/neovim
-              ./modules/vscode
-              ./modules/zsh
-            ];
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.${username} = { pkgs, ...}: {
+              home.username = username;
+              home.stateVersion = "24.05";
+              programs.home-manager.enable = true;
+              imports = [
+                ./modules/fzf
+                ./modules/git
+                ./modules/kitty
+                ./modules/neovim
+                ./modules/vscode
+                ./modules/zsh
+              ];
+            };
           };
-        };
-      }
+        }
       ];
     };
 

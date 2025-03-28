@@ -23,26 +23,26 @@
   };
 
 # Homebrew casks
-#  homebrew = {
-#    brews = [
-#      "bazelisk"
-#      "cmake"
-#      "gh"
-#      "git"
-#      "git-lfs"
-#      "hermit"
-#      "mas"
-#      "mvn"
-#      "ninja"
-#      "nvm"
-#      "pyenv"
-#      "python-lsp-server"
-#      "shellcheck"
-#      "ripgrep"
-#      "tree"
-#      "uv"
-#    ];
-#    enable = true;
+  homebrew = {
+    brews = [
+      "bazelisk"
+      "cmake"
+      "gh"
+      "git"
+      "git-lfs"
+      "hermit"
+      "mas"
+      "mvn"
+      "ninja"
+      "nvm"
+      "pyenv"
+      "python-lsp-server"
+      "shellcheck"
+      "ripgrep"
+      "tree"
+      "uv"
+    ];
+    enable = true;
 #    casks = [
 #      "docker"
 #      "google-chrome"
@@ -55,8 +55,8 @@
 #    masApps = {
 #      "Be Focused Pro - Pomodoro Timer" = 961632517;
 #    };
-#    onActivation.cleanup = "zap";
-#  };
+    onActivation.cleanup = "zap";
+  };
 
 # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
