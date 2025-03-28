@@ -1,3 +1,5 @@
+local vim = vim
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -39,19 +41,27 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
- 
   -- colorscheme that will be used when installing plugins.
-  install = { 
-    colorscheme = { "kanagawa" }
+  install = {
+    colorscheme = { "nord" }
   },
 
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
 
--- Setup colorscheme
-vim.cmd.colorscheme "kanagawa"
-
--- Set cursor background color
-vim.opt.cursorline = true
-vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#323240' }) -- Light blue background
+-- Brighten up Visual to be as bright as IncSearch
+local function copy_highlight_style(source_group, target_group)
+  local source_attrs = vim.api.nvim_get_hl(0, { name = source_group })
+  if not source_attrs then
+    vim.api.nvim_echo({
+      { source_group, " highlight not found"}
+    }, true, {})
+    os.exit(1)
+  end
+  vim.api.nvim_set_hl(0, target_group, {
+    bg = source_attrs.bg,
+    fg = source_attrs.fg,
+  })
+end
+copy_highlight_style('IncSearch', 'Visual')
