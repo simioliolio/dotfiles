@@ -27,16 +27,21 @@
   homebrew = {
     brews = [
       "bazelisk"
+      "cmake"
       "gh"
       "git"
       "git-lfs"
+      "hermit"
       "mas"
       "mvn"
+      "ninja"
       "nvm"
       "pyenv"
       "python-lsp-server"
+      "shellcheck"
       "ripgrep"
       "tree"
+      "uv"
     ];
     enable = true;
     casks = [
@@ -46,6 +51,7 @@
       "grid"
       "kitty"
       "slack"
+      "tuple"
     ];
     masApps = {
       "Be Focused Pro - Pomodoro Timer" = 961632517;
