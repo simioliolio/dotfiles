@@ -49,6 +49,9 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
--- Setup catppuccin
+-- Setup colorscheme
 vim.cmd.colorscheme "kanagawa"
 
+-- Set cursor background color
+vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#323240' }) -- Light blue background
