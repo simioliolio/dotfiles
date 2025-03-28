@@ -31,6 +31,7 @@
       "git"
       "git-lfs"
       "hermit"
+      "luacheck"
       "mas"
       "mvn"
       "ninja"
