@@ -7,13 +7,13 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+#    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
     args = {
       username = "shaycock";
@@ -30,16 +30,16 @@
       specialArgs = args;
       modules = with args; [
         ./modules/darwin
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-# Apple Silicon Only
-              enableRosetta = true;
-# User owning the Homebrew prefix
-              user = username;
-            };
-          }
+#           nix-homebrew.darwinModules.nix-homebrew
+#           {
+#             nix-homebrew = {
+#               enable = true;
+# # Apple Silicon Only
+#               enableRosetta = true;
+# # User owning the Homebrew prefix
+#               user = username;
+#             };
+#           }
       home-manager.darwinModules.home-manager
       {
 
