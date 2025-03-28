@@ -43,18 +43,17 @@
       "uv"
     ];
     enable = true;
-#    casks = [
-#      "docker"
-#      "google-chrome"
-#      "google-cloud-sdk"
-#      "grid"
-#      "kitty"
-#      "slack"
-#      "tuple"
-#    ];
-#    masApps = {
-#      "Be Focused Pro - Pomodoro Timer" = 961632517;
-#    };
+    casks = [
+      "docker"
+      "google-chrome"
+      "google-cloud-sdk"
+      "grid"
+      "slack"
+      "tuple"
+    ];
+    masApps = {
+      "Be Focused Pro - Pomodoro Timer" = 961632517;
+    };
     onActivation.cleanup = "zap";
   };
 
