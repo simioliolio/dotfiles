@@ -22,6 +22,7 @@
     shellAliases = {
       ll = "ls -la";
       gs = "git status";
+      sm = "git submodule update --init --recursive";
     };
 
     history.size = 10000;
