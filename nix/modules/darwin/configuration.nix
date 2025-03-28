@@ -4,18 +4,17 @@
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget
   environment.systemPackages = [
+    pkgs.kitty
     pkgs.mkalias
-      pkgs.neovim
-      (pkgs.vscode-with-extensions.override {
-         vscodeExtensions = with pkgs.vscode-extensions; [
-           bazelbuild.vscode-bazel
-           bbenoist.nix
-           eamodio.gitlens
-           github.copilot
-           github.copilot-chat
-           ms-python.python
-         ];
-      })
+    pkgs.neovim
+    (pkgs.vscode-with-extensions.override {
+       vscodeExtensions = with pkgs.vscode-extensions; [
+         bazelbuild.vscode-bazel
+         bbenoist.nix
+         eamodio.gitlens
+         ms-python.python
+       ];
+    })
   ];
 
   users.users.${username} = {
