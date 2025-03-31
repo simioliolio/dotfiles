@@ -24,6 +24,8 @@ return {
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
         vim.keymap.set('n', '<leader>fo', function() vim.lsp.buf.format { async = true } end, bufopts)
+        vim.keymap.set('n', '<leader>dn', vim.diagnotic.goto_next, bufopts)
+        vim.keymap.set('n', '<leader>dp', vim.diagnotic.goto_prev, bufopts)
       end,
     }
 
