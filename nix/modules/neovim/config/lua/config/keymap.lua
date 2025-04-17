@@ -1,4 +1,5 @@
-vim.keymap.set("n", "<Leader>ll", function() require("lint").try_lint() end, { desc = "Lint current file" })
+vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, bufopts)
+vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, bufopts)
 
 vim.api.nvim_create_user_command("Cppath", function()
     local path = vim.fn.expand("%")

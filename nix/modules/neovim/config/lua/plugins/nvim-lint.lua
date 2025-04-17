@@ -23,6 +23,8 @@ return {
       end,
     })
 
+    vim.keymap.set("n", "<Leader>ll", function() require("lint").try_lint() end, { desc = "Lint current file" })
+
   end,
 }
 
