@@ -12,6 +12,7 @@
          bazelbuild.vscode-bazel
          bbenoist.nix
          eamodio.gitlens
+         llvm-vs-code-extensions.vscode-clangd
          ms-python.python
        ];
     })
@@ -42,9 +43,11 @@
       "ripgrep"
       "tree"
       "uv"
+      "yamllint"
     ];
     enable = true;
     casks = [
+      "cursor"
       "docker"
       "google-chrome"
       "google-cloud-sdk"
