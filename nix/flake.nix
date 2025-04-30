@@ -42,7 +42,6 @@
          }
         home-manager.darwinModules.home-manager
         {
-
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
@@ -54,6 +53,7 @@
                 ./modules/fzf
                 ./modules/git
                 ./modules/kitty
+                ./modules/launchd
                 ./modules/neovim
                 ./modules/vscode
                 ./modules/zsh

@@ -66,19 +66,20 @@
 
 # Used for backwards compatibility, please read the changelog before changing.
 # $ darwin-rebuild changelog
-system = {
-  stateVersion = 6;
-  defaults = {
-    NSGlobalDomain = {
-      KeyRepeat = 2;
-      InitialKeyRepeat = 10;
+
+  system = {
+    stateVersion = 6;
+    defaults = {
+      NSGlobalDomain = {
+        KeyRepeat = 2;
+        InitialKeyRepeat = 10;
+      };
+      trackpad.TrackpadThreeFingerDrag = true;
+      trackpad.Clicking = true;
+      universalaccess.closeViewScrollWheelToggle = true;
+      universalaccess.reduceMotion = true;
     };
-    trackpad.TrackpadThreeFingerDrag = true;
-    trackpad.Clicking = true;
-    universalaccess.closeViewScrollWheelToggle = true;
-    universalaccess.reduceMotion = true;
   };
-};
 
 # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
