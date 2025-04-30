@@ -8,6 +8,7 @@ return {
     local lint = require("lint")
 
     lint.linters_by_ft = {
+      kotlin = { "ktlint" },
       lua = { "luacheck" },
       nix = { "nix" },
       sh = { "shellcheck" },

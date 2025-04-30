@@ -27,11 +27,13 @@
   homebrew = {
     brews = [
       "bazelisk"
+      "busted"
       "cmake"
       "gh"
       "git"
       "git-lfs"
       "hermit"
+      "ktlint"
       "luacheck"
       "mas"
       "mvn"
