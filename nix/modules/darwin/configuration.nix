@@ -34,6 +34,8 @@
       "git-lfs"
       "hermit"
       "ktlint"
+      "kotlin-language-server"
+      "lua-language-server"
       "luacheck"
       "mas"
       "mvn"

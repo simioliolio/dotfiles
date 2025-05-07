@@ -2,21 +2,19 @@ return {
   "neovim/nvim-lspconfig",
 
   config = function()
-    local lspconfig = require('lspconfig')
-    -- TODO: import from config
-    -- require 'config.lspconfig'
+    local jump_and_show_next = function()
+      vim.diagnostic.jump({ count = 1 })
+      vim.diagnostic.open_float()
+    end
+    local jump_and_show_previous = function()
+      vim.diagnostic.jump({ count = -1 })
+      vim.diagnostic.open_float()
+    end
 
-    -- local on_attach = config.on_attach
-    -- local capabilities = config.capabilities
-
-    -- lspconfig.ruff.setup{}
-
-    lspconfig.pylsp.setup { -- Changed to pylsp.setup
-      on_attach = function(client, bufnr)
-        -- Optional: You can add keymaps here if you want LSP-specific keybindings
-        -- for things like go-to-definition, rename, etc.
-        -- Example keymaps (replace <leader> with your leader key):
-        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    vim.api.nvim_create_autocmd('LspAttach', {
+      callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        local bufopts = { noremap = true, silent = true, buffer = ev.buf }
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
@@ -24,10 +22,52 @@ return {
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
         vim.keymap.set('n', '<leader>fo', function() vim.lsp.buf.format { async = true } end, bufopts)
-        vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, bufopts)
-        vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, bufopts)
-      end,
-    }
+        vim.keymap.set('n', ']d', jump_and_show_next, bufopts)
+        vim.keymap.set('n', '[d', jump_and_show_previous, bufopts)
+      end
+    })
 
+    vim.lsp.enable('lua_ls')
+    vim.lsp.config('lua_ls', {
+      on_init = function(client)
+        if client.workspace_folders then
+          local path = client.workspace_folders[1].name
+          if path ~= vim.fn.stdpath('config') and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then
+            return
+          end
+        end
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+          runtime = {
+            -- Tell the language server which version of Lua you're using (most
+            -- likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT',
+            -- Tell the language server how to find Lua modules same way as Neovim
+            -- (see `:h lua-module-load`)
+            path = {
+              'lua/?.lua',
+              'lua/?/init.lua',
+            },
+          },
+          -- Make the server aware of Neovim runtime files
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME
+              -- Depending on the usage, you might want to add additional paths
+              -- here.
+              -- '${3rd}/luv/library'
+              -- '${3rd}/busted/library'
+            }
+          }
+        })
+      end,
+      settings = {
+        Lua = {}
+      }
+    })
+
+    vim.lsp.enable('pylsp')
+
+    vim.lsp.enable('ruff')
   end,
 }
