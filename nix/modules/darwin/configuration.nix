@@ -14,6 +14,7 @@
          eamodio.gitlens
          llvm-vs-code-extensions.vscode-clangd
          ms-python.python
+         ms-vsliveshare.vsliveshare
        ];
     })
   ];
