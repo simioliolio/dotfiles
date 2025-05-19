@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   launchd.agents = {
     gridStartup = {
@@ -8,5 +8,13 @@
         RunAtLoad = true;
       };
     };
+    kittyStartup = {
+      enable = true;
+      config = {
+        Program = "${pkgs.kitty}/bin/kitty";
+        RunAtLoad = true;
+      };
+    };
+
   };
 }
