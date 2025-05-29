@@ -65,9 +65,8 @@ return {
         Lua = {}
       }
     })
-
     vim.lsp.enable('pylsp')
-
     vim.lsp.enable('ruff')
+    vim.lsp.enable("kotlin-language-server")
   end,
 }
