@@ -77,7 +77,7 @@
     defaults = {
       dock = {
         autohide = true;
-      }
+      };
       NSGlobalDomain = {
         KeyRepeat = 2;
         InitialKeyRepeat = 10;
