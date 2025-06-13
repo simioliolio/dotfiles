@@ -9,10 +9,6 @@ A just-another-dotfiles-repo which quickly became a nix config.
 xcode-select --install
 # Install nix
 sh <(curl --proto '=https' --tlsv1.2 -L x https://nixos.org/nix/install)
-# Enable flakes
-mkdir -p ~/.config/nix
-echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
-sudo launchctl stop org.nix.nix-daemon
 # Clone this repo
 mkdir ~/src
 cd ~/src
