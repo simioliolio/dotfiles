@@ -55,7 +55,6 @@
       "cursor"
       "docker"
       "google-chrome"
-      "google-cloud-sdk"
       "grid"
       "slack"
       "tuple"
