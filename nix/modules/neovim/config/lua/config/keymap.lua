@@ -1,5 +1,4 @@
-vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, bufopts)
-vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, bufopts)
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, bufopts)
 
 vim.api.nvim_create_user_command("Cppath", function()
     local path = vim.fn.expand("%")
