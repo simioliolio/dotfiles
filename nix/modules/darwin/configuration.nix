@@ -53,6 +53,7 @@
     casks = [
       "cursor"
       "docker"
+      "ghostty"
       "google-chrome"
       "grid"
       "slack"
