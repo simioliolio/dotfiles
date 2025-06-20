@@ -31,7 +31,6 @@
       "busted"
       "cmake"
       "gh"
-      "git-lfs"
       "hermit"
       "ktlint"
       "kotlin-language-server"

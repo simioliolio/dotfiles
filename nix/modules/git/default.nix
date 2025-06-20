@@ -10,6 +10,7 @@
       core = {
         editor = "vim";
       };
+      include.path = "~/.config/git/writable_config";
       push = {
         autoSetupRemote = true;
       };
@@ -17,6 +18,7 @@
         rebase = true;
       };
     };
+    lfs.enable = true;
   };
 }
 
