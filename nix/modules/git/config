@@ -11,15 +11,6 @@
 	required = true
 	smudge = "git-lfs smudge -- %f"
 
-[gpg]
-	format = "openpgp"
-
-[gpg "openpgp"]
-	program = "/nix/store/dl3rd5py5kk83fwjk9vjrlm2r85l8sl4-gnupg-2.4.7/bin/gpg"
-
-[include]
-	path = "~/.config/git/writable_config"
-
 [pull]
 	rebase = true
 

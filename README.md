@@ -21,6 +21,10 @@ nix build .#darwinConfigurations.Tonto.system
 rm result
 ```
 
+### Note about `git`
+
+`git` installation is managed with homebrew but [the git config file](https://github.com/simioliolio/dotfiles/tree/main/nix/modules/git/config) is not managed by nix. This is because sometimes there are scripts which want to modify the git config but cannot. As a post-first-time-install step, copy the contents of the checked-in git config to ~/.config/git/config.
+
 ## Update
 
 ```

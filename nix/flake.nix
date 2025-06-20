@@ -51,7 +51,6 @@
               programs.home-manager.enable = true;
               imports = [
                 ./modules/fzf
-                ./modules/git
                 ./modules/kitty
                 ./modules/launchd
                 ./modules/neovim
