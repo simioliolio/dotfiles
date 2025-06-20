@@ -1,0 +1,27 @@
+[alias]
+	br = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+	l = "log --pretty=format:'%C(cyan)%h%Creset %C(green)%ad%Creset %C(yellow)%an%Creset: %C(reset)%s' --date=short --abbrev-commit"
+
+[core]
+	editor = "vim"
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[gpg]
+	format = "openpgp"
+
+[gpg "openpgp"]
+	program = "/nix/store/dl3rd5py5kk83fwjk9vjrlm2r85l8sl4-gnupg-2.4.7/bin/gpg"
+
+[include]
+	path = "~/.config/git/writable_config"
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
