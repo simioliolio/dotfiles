@@ -3,12 +3,10 @@ return {
 
   config = function()
     local jump_and_show_next = function()
-      vim.diagnostic.jump({ count = 1 })
-      vim.diagnostic.open_float()
+      vim.diagnostic.jump({ count = 1, float = true })
     end
     local jump_and_show_previous = function()
-      vim.diagnostic.jump({ count = -1 })
-      vim.diagnostic.open_float()
+      vim.diagnostic.jump({ count = -1, float = true })
     end
 
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -66,6 +64,18 @@ return {
       }
     })
     vim.lsp.enable('pylsp')
+    vim.lsp.config('pylsp', {
+      settings = {
+        pylsp = {
+          plugins = {
+            mypy = {
+              enabled = false
+            }
+          }
+        }
+      }
+
+    })
     vim.lsp.enable('ruff')
     vim.lsp.enable("kotlin-language-server")
   end,
