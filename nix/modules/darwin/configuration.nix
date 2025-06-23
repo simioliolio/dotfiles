@@ -4,6 +4,7 @@
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget
   environment.systemPackages = [
+    pkgs.google-cloud-sdk
     pkgs.kitty
     pkgs.mkalias
     pkgs.neovim
