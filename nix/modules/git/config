@@ -16,3 +16,6 @@
 
 [push]
 	autoSetupRemote = true
+
+[fetch]
+  showForcedUpdates = true
