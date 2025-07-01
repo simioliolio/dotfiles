@@ -17,5 +17,13 @@
       };
     };
 
+    ghosttyStartup = {
+      enable = true;
+      config = {
+        KeepAlive = true;
+        Program = "/Applications/Ghostty.app/Contents/MacOS/ghostty";
+        RunAtLoad = true;
+      };
+    };
   };
 }
