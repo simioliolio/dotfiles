@@ -56,6 +56,7 @@
     enable = true;
     casks = [
       "cursor"
+      "ghostty"
       "google-chrome"
       "grid"
       "slack"
