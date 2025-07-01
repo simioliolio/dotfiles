@@ -11,9 +11,9 @@
     kittyStartup = {
       enable = true;
       config = {
-        KeepAlive = true;
+        KeepAlive = false;
         Program = "${pkgs.kitty}/bin/kitty";
-        RunAtLoad = true;
+        RunAtLoad = false;
       };
     };
 
