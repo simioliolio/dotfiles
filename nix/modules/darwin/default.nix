@@ -4,8 +4,6 @@
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget
   environment.systemPackages = [
-    pkgs.docker
-    pkgs.docker-client
     pkgs.google-cloud-sdk
     pkgs.kitty
     pkgs.mkalias
