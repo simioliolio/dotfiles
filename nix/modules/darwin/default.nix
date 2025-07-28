@@ -81,9 +81,10 @@
       NSGlobalDomain = {
         KeyRepeat = 2;
         InitialKeyRepeat = 10;
+        "com.apple.trackpad.forceClick" = false;
       };
-      trackpad.TrackpadThreeFingerDrag = true;
       trackpad.Clicking = true;
+      trackpad.TrackpadThreeFingerDrag = true;
       universalaccess.closeViewScrollWheelToggle = true;
       universalaccess.reduceMotion = true;
     };

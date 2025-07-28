@@ -8,6 +8,11 @@ return {
   config = function()
     vim.keymap.set('n', '<Leader>ff', function() require("fzf-lua").files() end, { noremap = true, silent = true, desc = "FzfLua files"})
     vim.keymap.set('n', '<Leader>gg', function() require("fzf-lua").live_grep() end, { noremap = true, silent = true, desc = "FzfLua live_grep"})
+    vim.keymap.set('n', '<Leader>gh', function() require("fzf-lua").live_grep({ rg_opts = "--hidden --no-ignore" }) end, {
+      noremap = true,
+      silent = true,
+      desc = "FzfLua live_grep including hidden files"
+    })
     vim.keymap.set('n', '<Leader>bb', function() require("fzf-lua").buffers() end, { noremap = true, silent = true, desc = "FzfLua buffers"})
     vim.keymap.set('n', '<Leader>jj', function() require("fzf-lua").jumps() end, { noremap = true, silent = true, desc = "FzfLua jumps"})
     vim.keymap.set('n', '<Leader>kk', function() require("fzf-lua").keymaps() end, { noremap = true, silent = true, desc = "FzfLua keymaps"})
