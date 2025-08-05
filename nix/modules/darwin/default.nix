@@ -75,6 +75,13 @@
   system = {
     stateVersion = 6;
     defaults = {
+      CustomUserPreferences = {
+        "com.google.Chrome" = {
+          "NSUserKeyEquivalents" = {
+            "Move Tab to New Window" = "^~@t";
+          };
+        };
+      };
       dock = {
         autohide = true;
       };
