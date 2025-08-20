@@ -6,3 +6,9 @@ vim.api.nvim_create_user_command("Cppath", function()
     vim.fn.setreg("+", path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
+
+vim.keymap.set('n', '<leader>s', ':set spell!<CR>', {
+  noremap = true,
+  silent = true,
+  desc = "Toggle spell check"
+})

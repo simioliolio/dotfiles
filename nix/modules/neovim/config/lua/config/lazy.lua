@@ -35,6 +35,10 @@ vim.o.clipboard = "unnamed" -- OSX
 -- Line numbers
 vim.o.number = true
 
+-- Spelling
+vim.opt.spell = true
+vim.opt.spelllang = "en_gb"
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
