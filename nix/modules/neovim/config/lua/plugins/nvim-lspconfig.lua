@@ -2,6 +2,7 @@ return {
   "neovim/nvim-lspconfig",
 
   config = function()
+    local vim = vim
     local jump_and_show_next = function()
       vim.diagnostic.jump({ count = 1, float = true })
     end
@@ -11,7 +12,6 @@ return {
 
     vim.api.nvim_create_autocmd('LspAttach', {
       callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
         local bufopts = { noremap = true, silent = true, buffer = ev.buf }
         vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, bufopts)
