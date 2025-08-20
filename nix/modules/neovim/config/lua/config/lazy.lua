@@ -54,7 +54,6 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
--- Brighten up Visual to be as bright as IncSearch
 local function copy_highlight_style(source_group, target_group)
   local source_attrs = vim.api.nvim_get_hl(0, { name = source_group })
   if not source_attrs then
@@ -68,4 +67,5 @@ local function copy_highlight_style(source_group, target_group)
     fg = source_attrs.fg,
   })
 end
-copy_highlight_style('IncSearch', 'Visual')
+-- Uncomment to brighten up Visual to be as bright as IncSearch
+-- copy_highlight_style('IncSearch', 'Visual')
