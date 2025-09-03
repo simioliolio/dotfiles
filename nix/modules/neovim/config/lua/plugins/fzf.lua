@@ -7,7 +7,8 @@ return {
   opts = {},
   config = function()
     vim.keymap.set('n', '<Leader>ff', function() require("fzf-lua").files() end, { noremap = true, silent = true, desc = "FzfLua files"})
-    vim.keymap.set('n', '<Leader>gg', function() require("fzf-lua").live_grep() end, { noremap = true, silent = true, desc = "FzfLua live_grep"})
+    vim.keymap.set('n', '<Leader>gg', function() require("fzf-lua").live_grep({ search = vim.fn.expand("")}) end, { noremap = true, silent = true, desc = "FzfLua live_grep"})
+    vim.keymap.set('n', '<Leader>gc', function() require("fzf-lua").live_grep({ search = vim.fn.expand("<cword>")}) end, { noremap = true, silent = true, desc = "FzfLua live_grep of word under cursor"})
     vim.keymap.set('n', '<Leader>gh', function() require("fzf-lua").live_grep({ rg_opts = "--hidden --no-ignore" }) end, {
       noremap = true,
       silent = true,
@@ -37,6 +38,11 @@ return {
         case_mode = 'respect_case',
       })
     end)
-    require("fzf-lua").setup({ winopts = { preview = { wrap = true, layout = "horizonal" }}})
+    require("fzf-lua").setup({
+      winopts = { preview = { wrap = true, layout = "horizonal" }},
+      fzf_opts = {
+        ['--bind'] = 'ctrl-c:clear-query', -- clear the input
+      },
+    })
   end,
 }
