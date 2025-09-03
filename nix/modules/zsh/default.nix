@@ -21,8 +21,26 @@
       export CLAUDE_CODE_USE_VERTEX=1
       export ANTHROPIC_SMALL_FAST_MODEL='claude-3-5-haiku@20241022'
       export CLOUD_ML_REGION='europe-west1'
+      export VERTEX_REGION_CLAUDE_4_1_OPUS='europe-west4'
       export VERTEX_REGION_CLAUDE_4_0_OPUS='europe-west4'
       export ANTHROPIC_VERTEX_PROJECT_ID=spotify-claude-code-trial
+      nv() {
+        local title
+        # Check if we are in a git repository
+        if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+          # If yes, use the repo's root directory name as the title
+          title=$(basename "$(git rev-parse --show-toplevel)")
+        else
+          # Otherwise, use the current directory's name
+          title=$(basename "$PWD")
+        fi
+
+        # Set the terminal title using a standard escape sequence
+        printf "\e]2;%s\a" "$title"
+
+        # Execute the actual nvim command with any arguments you passed
+        command nvim "$@"
+      }
     '';
 
     shellAliases = {
