@@ -14,18 +14,19 @@ return {
     end
 
     local on_attach = function(client, bufnr)
-      -- NOTE: We wrap this in a pcall to prevent errors if a server doesn't
-      -- support formatting.
+      -- Autoformat
       local status_ok, _ = pcall(client.supports_method, "textDocument/formatting")
       if status_ok then
         vim.api.nvim_create_autocmd("BufWritePre", {
           group = vim.api.nvim_create_augroup("LspFormat." .. bufnr, {}),
           buffer = bufnr,
           callback = function()
-            vim.lsp.buf.format({ bufnr = bufnr })
+            -- NOTE: Disable for now while choice of formatters is decided
+            -- vim.lsp.buf.format({ bufnr = bufnr })
           end,
         })
       end
+
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
       vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, bufopts)
       vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, bufopts)
@@ -36,6 +37,8 @@ return {
       vim.keymap.set('n', '<leader>fo', function() vim.lsp.buf.format { async = true } end, bufopts)
       vim.keymap.set('n', ']d', jump_and_show_next, bufopts)
       vim.keymap.set('n', '[d', jump_and_show_previous, bufopts)
+
+      require("illuminate").on_attach(client)
     end
 
     local client_capabilities = vim.lsp.protocol.make_client_capabilities()
