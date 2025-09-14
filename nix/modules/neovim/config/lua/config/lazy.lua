@@ -36,7 +36,7 @@ vim.o.clipboard = "unnamed" -- OSX
 vim.o.number = true
 
 -- Spelling
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = "en_gb"
 
 -- Setup lazy.nvim
