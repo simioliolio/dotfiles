@@ -8,7 +8,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -24,10 +24,10 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
 -- Tab configuration
-vim.o.tabstop = 2 -- A TAB character looks like 2 spaces
+vim.o.tabstop = 2      -- A TAB character looks like 2 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
-vim.o.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
-vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
+vim.o.softtabstop = 2  -- Number of spaces inserted instead of a TAB character
+vim.o.shiftwidth = 2   -- Number of spaces inserted when indenting
 
 -- Setup clipboard
 vim.o.clipboard = "unnamed" -- OSX
@@ -58,7 +58,7 @@ local function copy_highlight_style(source_group, target_group)
   local source_attrs = vim.api.nvim_get_hl(0, { name = source_group })
   if not source_attrs then
     vim.api.nvim_echo({
-      { source_group, " highlight not found"}
+      { source_group, " highlight not found" }
     }, true, {})
     os.exit(1)
   end

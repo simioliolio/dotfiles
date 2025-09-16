@@ -1,6 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
-  dependencies = { 'saghen/blink.cmp' },
+  dependencies = {
+    'saghen/blink.cmp',
+    'RRethy/vim-illuminate',
+  },
   config = function()
     local vim = vim
     local lspconfig = require("lspconfig")
