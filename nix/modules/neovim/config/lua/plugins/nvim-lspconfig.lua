@@ -78,13 +78,17 @@ return {
       }
     })
 
+    local util = require('lspconfig.util')
     lspconfig.pylsp.setup({
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
         pylsp = {
           plugins = {
-            autopep8 = { enabled = true },
+            autopep8 = {
+              enabled = true,
+              config = util.root_pattern('.flake8')() or util.root_pattern('setup.cfg')(),
+            },
             flake8 = { enabled = true },
             mypy = { enabled = true },
             yapf = { enabled = false },
