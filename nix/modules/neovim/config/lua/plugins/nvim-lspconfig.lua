@@ -84,18 +84,14 @@ return {
       settings = {
         pylsp = {
           plugins = {
-            black = { enabled = true },
+            autopep8 = { enabled = true },
+            flake8 = { enabled = true },
             mypy = { enabled = true },
             yapf = { enabled = false },
           },
         },
       },
     })
-
-    -- lspconfig.ruff.setup({
-    --   on_attach = on_attach,
-    --   capabilities = capabilities,
-    -- })
 
     lspconfig['kotlin_language_server'].setup({
       on_attach = on_attach,
