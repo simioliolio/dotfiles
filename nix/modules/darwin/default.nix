@@ -8,6 +8,7 @@
     pkgs.kitty
     pkgs.mkalias
     pkgs.neovim
+    pkgs.pure-prompt
     (pkgs.vscode-with-extensions.override {
        vscodeExtensions = with pkgs.vscode-extensions; [
          bazelbuild.vscode-bazel

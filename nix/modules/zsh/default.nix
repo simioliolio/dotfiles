@@ -1,11 +1,7 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
-    oh-my-zsh = {
-	    enable = true;
-	    theme = "robbyrussell";
-    };
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -41,6 +37,10 @@
         # Execute the actual nvim command with any arguments you passed
         command nvim "$@"
       }
+
+      # pure prompt setup
+      autoload -U promptinit; promptinit
+      prompt pure
     '';
 
     shellAliases = {
