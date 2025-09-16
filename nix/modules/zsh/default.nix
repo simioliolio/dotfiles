@@ -41,6 +41,11 @@
       # pure prompt setup
       autoload -U promptinit; promptinit
       prompt pure
+      # Optimise for monorepos
+      PRE_GIT_PULL=0
+      PURE_GIT_UNTRACKED_DIRTY=0
+      # PURE_GIT_DELAY_DIRTY_CHECK=1800
+
     '';
 
     shellAliases = {
