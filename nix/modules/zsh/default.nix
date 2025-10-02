@@ -38,7 +38,10 @@
         command nvim "$@"
       }
 
-      # pure prompt setup
+      # Enable history search with up/down arrows using raw escape codes
+      bindkey '^[[A' history-beginning-search-backward
+      bindkey '^[[B' history-beginning-search-forward
+
       autoload -U promptinit; promptinit
       prompt pure
       # Optimise for monorepos
