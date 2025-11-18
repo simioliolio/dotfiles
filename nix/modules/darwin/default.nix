@@ -58,6 +58,7 @@
       "ghostty"
       "google-chrome"
       "grid"
+      "meld"
       "slack"
       "tuple"
     ];
@@ -90,6 +91,7 @@
         KeyRepeat = 2;
         InitialKeyRepeat = 10;
         "com.apple.trackpad.forceClick" = false;
+        AppleKeyboardUIMode = 3;
       };
       trackpad.Clicking = true;
       trackpad.TrackpadThreeFingerDrag = true;
