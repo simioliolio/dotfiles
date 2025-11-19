@@ -64,7 +64,8 @@
       "tuple"
     ];
     masApps = {
-      "Be Focused Pro - Pomodoro Timer" = 961632517;
+      # TODO: Fix mas
+      # "Be Focused Pro - Pomodoro Timer" = 961632517;
     };
     onActivation.cleanup = "zap";
   };
