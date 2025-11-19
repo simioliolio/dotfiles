@@ -49,6 +49,8 @@
       PURE_GIT_UNTRACKED_DIRTY=0
       # PURE_GIT_DELAY_DIRTY_CHECK=1800
 
+      export PATH="$HOME/.jenv/bin:$PATH"
+      eval "$(jenv init -)"
     '';
 
     shellAliases = {
