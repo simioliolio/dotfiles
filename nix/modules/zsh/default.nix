@@ -42,6 +42,9 @@
       bindkey '^[[A' history-beginning-search-backward
       bindkey '^[[B' history-beginning-search-forward
 
+      # del
+      bindkey "^[[3~" delete-char
+
       autoload -U promptinit; promptinit
       prompt pure
       # Optimise for monorepos
