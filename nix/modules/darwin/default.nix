@@ -37,6 +37,7 @@
       "git-lfs"
       "hermit"
       "jenv"
+      "jq"
       "ktlint"
       "kotlin-language-server"
       "lua-language-server"
