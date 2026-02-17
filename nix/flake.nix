@@ -54,7 +54,6 @@
                 ./modules/kitty
                 ./modules/launchd
                 ./modules/neovim
-                ./modules/vscode
                 ./modules/zsh
               ];
             };

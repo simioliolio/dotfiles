@@ -9,16 +9,6 @@
     pkgs.mkalias
     pkgs.neovim
     pkgs.pure-prompt
-    (pkgs.vscode-with-extensions.override {
-       vscodeExtensions = with pkgs.vscode-extensions; [
-         bazelbuild.vscode-bazel
-         bbenoist.nix
-         eamodio.gitlens
-         llvm-vs-code-extensions.vscode-clangd
-         ms-python.python
-         ms-vsliveshare.vsliveshare
-       ];
-    })
   ];
 
   users.users.${username} = {
@@ -106,7 +96,7 @@
 # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-# Allow unfree apps (ie, vscode, etc)
+# Allow unfree apps (ie, vscode, etc) (Note, still needed?)
   nixpkgs.config.allowUnfree = true;
 
 # TODO: Ensure GUI apps are searchable in spotlight
