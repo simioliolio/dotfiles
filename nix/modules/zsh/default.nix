@@ -14,13 +14,6 @@
       [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
       [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
       eval "$(pyenv init -)"
-      export CLAUDE_CODE_USE_VERTEX=1
-      export ANTHROPIC_SMALL_FAST_MODEL='claude-3-5-haiku@20241022'
-      export CLOUD_ML_REGION='global'
-      export VERTEX_REGION_CLAUDE_4_1_OPUS='global'
-      export VERTEX_REGION_CLAUDE_4_0_OPUS='global'
-      export VERTEX_REGION_CLAUDE_4_6_OPUS='global'
-      export ANTHROPIC_VERTEX_PROJECT_ID=spotify-claude-code-trial
       nv() {
         local title
         # Check if we are in a git repository
