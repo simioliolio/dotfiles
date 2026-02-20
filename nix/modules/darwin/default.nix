@@ -40,6 +40,8 @@
       "python-lsp-server"
       "shellcheck"
       "ripgrep"
+      "cirruslabs/cli/tart"
+      "tmux"
       "tree"
       "uv"
       "yamllint"
