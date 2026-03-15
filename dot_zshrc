@@ -1,0 +1,84 @@
+# ==============================================================================
+# 1. Environment Variables
+# ==============================================================================
+export PATH="$PATH:$HOME/.local/bin"
+export EDITOR="nvim"
+
+# ==============================================================================
+# 2. History Configuration
+# ==============================================================================
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+# Ignore duplicate entries in history
+setopt HIST_IGNORE_ALL_DUPS
+# Ignore specific commands
+export HISTORY_IGNORE="(rm *|pkill *|cp *)"
+
+# ==============================================================================
+# 3. Zsh Basics & Completions
+# ==============================================================================
+# Load compinit for autocomplete
+autoload -Uz compinit && compinit
+
+# ==============================================================================
+# 4. Keybindings
+# ==============================================================================
+# Enable history search with up/down arrows
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+
+# Enable delete key
+bindkey "^[[3~" delete-char
+
+# ==============================================================================
+# 5. Aliases
+# ==============================================================================
+alias ll="ls -la"
+alias gs="git status"
+alias sm="git submodule update --init --recursive"
+
+# ==============================================================================
+# 6. Custom Functions
+# ==============================================================================
+nv() {
+  local title
+  # Check if we are in a git repository
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    # If yes, use the repo's root directory name as the title
+    title=$(basename "$(git rev-parse --show-toplevel)")
+  else
+    # Otherwise, use the current directory's name
+    title=$(basename "$PWD")
+  fi
+
+  # Set the terminal title using a standard escape sequence
+  printf "\e]2;%s\a" "$title"
+
+  # Execute the actual nvim command with any arguments you passed
+  command nvim "$@"
+}
+
+# ==============================================================================
+# 7. Plugins & Prompt (via Homebrew)
+# ==============================================================================
+# Pure Prompt Configuration
+export PRE_GIT_PULL=0
+export PURE_GIT_UNTRACKED_DIRTY=0
+# fpath needs to know where Homebrew installed the pure prompt
+fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+autoload -U promptinit; promptinit
+prompt pure
+
+# Load zsh-autosuggestions
+if [ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+    source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+# Load zsh-syntax-highlighting (Must be loaded at the very end of plugins!)
+if [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+export PATH=/opt/spotify-devex/bin:$PATH
