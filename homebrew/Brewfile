@@ -1,0 +1,47 @@
+# ==============================================================================
+# Taps (Third-party repositories)
+# ==============================================================================
+tap "cirruslabs/cli"
+
+# ==============================================================================
+# Brews (CLI Tools & Binaries)
+# ==============================================================================
+brew "bazelisk"
+brew "busted"
+brew "chezmoi"
+brew "cmake"
+brew "gcloud-cli"
+brew "gh"
+brew "git"
+brew "git-lfs"
+brew "hermit"
+brew "jq"
+brew "ktlint"
+brew "kotlin-language-server"
+brew "lua-language-server"
+brew "luacheck"
+brew "mas"
+brew "maven"
+brew "mise"
+brew "neovim"
+brew "ninja"
+brew "pure"
+brew "python-lsp-server"
+brew "shellcheck"
+brew "ripgrep"
+brew "tart"
+brew "tmux"
+brew "tree"
+brew "uv"
+brew "yamllint"
+
+# ==============================================================================
+# Casks
+# ==============================================================================
+cask "cursor"
+cask "ghostty"
+cask "google-chrome"
+cask "grid"
+cask "meld"
+cask "slack"
+cask "tuple"
