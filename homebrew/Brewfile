@@ -36,12 +36,14 @@ brew "tmux"
 brew "tree"
 brew "uv"
 brew "yamllint"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 
 # ==============================================================================
 # Casks
 # ==============================================================================
 cask "cursor"
-cask "google-cloud-sdk"
+cask "gcloud-cli"
 cask "ghostty"
 cask "google-chrome"
 cask "grid"

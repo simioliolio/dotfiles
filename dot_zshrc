@@ -68,18 +68,18 @@ nv() {
 export PRE_GIT_PULL=0
 export PURE_GIT_UNTRACKED_DIRTY=0
 # fpath needs to know where Homebrew installed the pure prompt
-fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 autoload -U promptinit; promptinit
 prompt pure
 
 # Load zsh-autosuggestions
-if [ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-    source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+    source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
 # Load zsh-syntax-highlighting (Must be loaded at the very end of plugins!)
-if [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-    source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 export PATH=/opt/spotify-devex/bin:$PATH
