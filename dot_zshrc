@@ -33,6 +33,10 @@ bindkey '^[[B' history-beginning-search-forward
 # Enable delete key
 bindkey "^[[3~" delete-char
 
+# Option+left/right to move word-by-word
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
+
 # ==============================================================================
 # 5. Aliases
 # ==============================================================================
