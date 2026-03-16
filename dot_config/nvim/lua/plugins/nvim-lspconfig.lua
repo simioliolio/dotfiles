@@ -5,9 +5,6 @@ return {
     'RRethy/vim-illuminate',
   },
   config = function()
-    local vim = vim
-    local lspconfig = vim.lsp.config()
-
     local jump_and_show_next = function()
       vim.diagnostic.jump({ count = 1, float = true })
     end
@@ -47,11 +44,14 @@ return {
     local client_capabilities = vim.lsp.protocol.make_client_capabilities()
     local capabilities = require('blink-cmp').get_lsp_capabilities(client_capabilities)
 
-    lspconfig.lua_ls.setup({
+    vim.lsp.config('lua_ls', {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
         Lua = {
+          diagnostics = {
+            globals = { 'vim' },
+          },
           runtime = {
             -- Tell the language server which version of Lua you're using (most
             -- likely LuaJIT in the case of Neovim)
@@ -79,7 +79,7 @@ return {
     })
 
     local util = require('lspconfig.util')
-    lspconfig.pylsp.setup({
+    vim.lsp.config('pylsp', {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
@@ -97,7 +97,7 @@ return {
       },
     })
 
-    lspconfig['kotlin_language_server'].setup({
+    vim.lsp.config('kotlin_language_server', {
       on_attach = on_attach,
       capabilities = capabilities,
     })
