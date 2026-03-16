@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Brewfile hash: {{ include "homebrew/Brewfile" | sha256sum }}
+set -e
+
+echo "📦 Installing tools and apps from Brewfile..."
+brew bundle --file="{{ .chezmoi.sourceDir }}/homebrew/Brewfile"

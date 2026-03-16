@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Exit immediately if a command exits with a non-zero status
+# First-time machine setup. After this, use `chezmoi apply` to sync.
 set -e
 
 echo "🚀 Starting dotfiles bootstrap process..."
@@ -21,26 +21,14 @@ else
 fi
 
 # 3. Install Chezmoi
-echo "🏠 Installing Chezmoi..."
-brew install chezmoi
+if ! command -v chezmoi &> /dev/null; then
+  echo "🏠 Installing Chezmoi..."
+  brew install chezmoi
+fi
 
-# 4. Initialize and apply Chezmoi dotfiles
-# This clones your repo to ~/.local/share/chezmoi and applies your configurations
+# 4. Initialize and apply dotfiles (also triggers run_onchange scripts for brew bundle, mise, etc.)
 echo "📥 Cloning and applying dotfiles via Chezmoi..."
 chezmoi init --apply simioliolio/dotfiles
 
-# 5. Install Homebrew packages from the Brewfile
-# This assumes you placed your Brewfile in the root of your dotfiles repo
-echo "📦 Installing tools and apps from Brewfile..."
-brew bundle --file="$HOME/.local/share/chezmoi/homebrew/Brewfile"
-
-# 6. Install language runtimes via Mise
-# Now that Homebrew has installed Mise (based on your Brewfile), we can run it
-if command -v mise &> /dev/null; then
-  echo "🛠️ Installing language runtimes via Mise..."
-  mise install
-else
-  echo "⚠️ Mise not found. Make sure 'brew \"mise\"' is in your Brewfile!"
-fi
-
 echo "✅ Bootstrap complete! Please restart your terminal (or your Mac) to ensure all changes take effect."
+echo "   From now on, run 'chezmoi apply' to sync your machine."

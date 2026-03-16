@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+set -e
+
+if command -v mise &> /dev/null; then
+  echo "🛠️ Installing language runtimes via Mise..."
+  mise install --yes
+else
+  echo "⚠️ Mise not found. Run brew bundle first."
+fi
