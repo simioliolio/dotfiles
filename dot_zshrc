@@ -83,3 +83,10 @@ if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.
 fi
 
 export PATH=/opt/spotify-devex/bin:$PATH
+
+# ==============================================================================
+# 8. Mise (runtime version manager)
+# ==============================================================================
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
