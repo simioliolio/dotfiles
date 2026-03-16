@@ -6,7 +6,7 @@ return {
   },
   config = function()
     local vim = vim
-    local lspconfig = require("lspconfig")
+    local lspconfig = vim.lsp.config()
 
     local jump_and_show_next = function()
       vim.diagnostic.jump({ count = 1, float = true })
