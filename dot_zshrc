@@ -76,6 +76,11 @@ fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 autoload -U promptinit; promptinit
 prompt pure
 
+# Load fzf keybindings (ctrl+r for history search, ctrl+t for file search)
+if [ -f "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh" ]; then
+    source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+fi
+
 # Load zsh-autosuggestions
 if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
     source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
