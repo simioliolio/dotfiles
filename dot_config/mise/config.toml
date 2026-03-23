@@ -2,3 +2,9 @@
 python = "3.12"
 node = "22"
 java = "21"
+
+[hooks]
+postinstall = "corepack enable pnpm"
+
+[settings]
+experimental = true
