@@ -2,6 +2,7 @@
 python = "3.12"
 node = "22"
 java = "21"
+rust = "1.94.0"
 
 [hooks]
 postinstall = "corepack enable pnpm"
