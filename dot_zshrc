@@ -2,6 +2,7 @@
 # 1. Environment Variables
 # ==============================================================================
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/usr/local/bin"
 export EDITOR="nvim"
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 

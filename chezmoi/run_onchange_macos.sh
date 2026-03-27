@@ -50,6 +50,25 @@ defaults write com.apple.universalaccess reduceMotion -bool true
 defaults write com.apple.Accessibility reduceMotion -bool true
 
 # ------------------------------------------------------------------------------
+# Keyboard Shortcuts
+# ------------------------------------------------------------------------------
+echo "Disabling Game Overlay shortcut (Cmd+Esc)..."
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 260 '
+  <dict>
+    <key>enabled</key><false/>
+    <key>value</key>
+    <dict>
+      <key>parameters</key>
+      <array>
+        <integer>65535</integer>
+        <integer>53</integer>
+        <integer>1048576</integer>
+      </array>
+      <key>type</key><string>standard</string>
+    </dict>
+  </dict>'
+
+# ------------------------------------------------------------------------------
 # Restart affected applications
 # ------------------------------------------------------------------------------
 echo "Restarting affected apps to apply changes..."
