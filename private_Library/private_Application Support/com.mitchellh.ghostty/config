@@ -1,0 +1,4 @@
+keybind = shift+enter=text:\n
+
+background-opacity = 1.0
+background-blur = false
