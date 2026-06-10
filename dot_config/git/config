@@ -16,6 +16,7 @@
 
 [push]
 	autoSetupRemote = true
+	default = simple
 [maintenance]
 	repo = /Users/shaycock/src/client
 	repo = /Users/shaycock/src/client-android
@@ -29,6 +30,36 @@
 	repo = /Users/shaycock/src/client-module-info-in-src-test-4
 	repo = /Users/shaycock/src/client-error-in-spt-installer
 	repo = /Users/shaycock/src/client-spt-cwd-global-tasks
+	repo = /Users/shaycock/src/client-spt-for-agents
+	repo = /Users/shaycock/src/client-client-dev-support-summary
+	repo = /Users/shaycock/src/client-fix-filelinter-config-matcher-paths
+	repo = /Users/shaycock/src/client-wt-5
+	repo = /Users/shaycock/src/client-wt-1
+	repo = /Users/shaycock/src/client-bootstrap-download_xcode_for_non_ios
+	repo = /Users/shaycock/src/client-bootstrap-download_xcode_telemetry
+	repo = /Users/shaycock/src/client-spt-e2e-check-with-current-artifactory-version
+	repo = /Users/shaycock/src/client-download_future_xcode_in_bootstrap
+	repo = /Users/shaycock/src/client-bootstrap-exclude-express-from-prepare-xcode
+	repo = /Users/shaycock/src/client-bootstrap-telemetry-when-switching-xcode
+	repo = /Users/shaycock/src/client-bootstrap-telemetry-when-switching-xcode-2
+	repo = /Users/shaycock/src/client-bootstrap-fix-future-version
+	repo = /Users/shaycock/src/client-spt-global-tasks-uninstall-local
+	repo = /Users/shaycock/src/client-golden-path-research-fixes
+	repo = /Users/shaycock/src/client-tune-detect-unusual-client-names
+	repo = /Users/shaycock/src/client-dj-1371
+	repo = /Users/shaycock/src/client-dj-1278
+	repo = /Users/shaycock/src/client-smartling-language-identifier-shuffle-android
+	repo = /Users/shaycock/src/client-bootstrap-yes-to-web-by-default
+	repo = /Users/shaycock/src/client-honk-resume-logic-fix
+	repo = /Users/shaycock/src/client-smartling-config-generation-fix
+	repo = /Users/shaycock/src/client-i18n-check-apk-bloat
+	repo = /Users/shaycock/src/client-smartling-no-tvos-bump
+	repo = /Users/shaycock/src/client-smartling-fix-ios-translations-post-reshuffle
+	repo = /Users/shaycock/src/client-music-delta-hack
+	repo = /Users/shaycock/src/client-apple-vscode-sourcekit-bazel-bsp-missing
+	repo = /Users/shaycock/src/client-tune-analysis
+	repo = /Users/shaycock/src/client-worktree-session-dramatic-robin-10f7
+	repo = /Users/shaycock/src/client-tune-v2-lightening
 
 [fetch]
 	showForcedUpdates = true
