@@ -99,15 +99,6 @@ if command -v mise &> /dev/null; then
   eval "$(mise activate zsh)"
 fi
 
-
-# pnpm
-export PNPM_HOME="/Users/shaycock/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # Android SDK (added by spt tune)
 export ANDROID_HOME="/Users/shaycock/Library/Android/sdk"
 export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH"

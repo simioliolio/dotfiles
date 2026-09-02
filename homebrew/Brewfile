@@ -1,13 +1,14 @@
 # ==============================================================================
 # Taps (Third-party repositories)
 # ==============================================================================
-tap "atlassian-labs/acli"
+tap "atlassian/acli"
 tap "cirruslabs/cli"
 
 # ==============================================================================
 # Brews (CLI Tools & Binaries)
 # ==============================================================================
-brew "acli"
+brew "atlassian/acli/acli"
+brew "bash"
 brew "bazelisk"
 brew "busted"
 brew "chezmoi"
