@@ -1,0 +1,4 @@
+#!/bin/sh
+# herdr Cargo.lock hash: {{ include (joinPath .chezmoi.homeDir "src/herdr/Cargo.lock") | sha256sum }}
+echo "Source changes detected: rebuilding herdr..."
+cargo install --path "$HOME/src/herdr"
