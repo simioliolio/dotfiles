@@ -1,6 +1,5 @@
 [tools]
 python = "3.12"
-herdr = "latest"
 java = "21"
 rust = "1.94.0"
 

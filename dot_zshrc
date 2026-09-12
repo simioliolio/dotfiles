@@ -66,6 +66,10 @@ nv() {
   command nvim "$@"
 }
 
+realwhich () {
+	PATH="${PATH#/opt/spotify-devex/bin:}" which "$1"
+}
+
 # ==============================================================================
 # 7. Plugins & Prompt (via Homebrew)
 # ==============================================================================
@@ -110,3 +114,16 @@ export PATH=/opt/spotify-devex/bin:$PATH
 export NVM_DIR="/Users/shaycock/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# >>> spotify-tune:shell >>>
+if [ -r '/Users/shaycock/Library/Application Support/spotify-tune/shell/tune.sh' ] && [ "${__SPT_TUNE_INTERACTIVE_SOURCED-}" != 1 ]; then
+  __SPT_TUNE_INTERACTIVE_SOURCED=1
+  . '/Users/shaycock/Library/Application Support/spotify-tune/shell/tune.sh' interactive
+fi
+# <<< spotify-tune:shell <<<
+# >>> spotify-tune:shell-tail >>>
+if [ -r '/Users/shaycock/Library/Application Support/spotify-tune/shell/tune.sh' ] && [ "${__SPT_TUNE_INTERACTIVE_TAIL_SOURCED-}" != 1 ]; then
+  __SPT_TUNE_INTERACTIVE_TAIL_SOURCED=1
+  . '/Users/shaycock/Library/Application Support/spotify-tune/shell/tune.sh' interactive_tail
+fi
+# <<< spotify-tune:shell-tail <<<
